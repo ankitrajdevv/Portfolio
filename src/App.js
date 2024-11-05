@@ -10,7 +10,7 @@ function App() {
       <div id='allsection'>
         {/* Home Section */}
         <div id="home" className="section home">
-          <h1>Welcome to My Portfolio</h1>
+          <h1>Work in Progress !!</h1>
         </div>
         
         <div id="about" className="section about">
