@@ -17,7 +17,7 @@
 
 /* Ensures sections are below the navbar */
 .section {
-  backdrop-filter: blur(2px);
+  /* backdrop-filter: blur(2px); */
   height: 100vh;
   padding: 20px;
   padding-top: 100px; /* Adjust this value to match your navbar height */
