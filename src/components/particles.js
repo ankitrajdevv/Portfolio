@@ -16,9 +16,11 @@ const ParticlesComponent = (props) => {
   const options = useMemo(
     () => ({
       background: {
-        color: {
-          value: "#000000", // Updated to match your dark theme
-        },
+        // image: "url('/bg.jpg')", // Set your image path here
+        // position: "center center",
+        // repeat: "no-repeat",
+        // size: "cover",
+        color: "#000000"
       },
       fpsLimit: 60,
       interactivity: {

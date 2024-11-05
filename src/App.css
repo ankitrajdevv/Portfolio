@@ -17,10 +17,47 @@
 
 /* Ensures sections are below the navbar */
 .section {
+  backdrop-filter: blur(2px);
   height: 100vh;
   padding: 20px;
   padding-top: 100px; /* Adjust this value to match your navbar height */
   color: white;
+}
+
+#home {
+  height: auto; /* Allow height to adjust based on content */
+  display: flex;
+  flex-direction: column; /* Stack subsections vertically */
+  align-items: center; /* Center subsections */
+}
+
+.subsection-container {
+  display: flex; /* Use flexbox to align subsections horizontally */
+  justify-content: space-evenly; /* Evenly space subsections */
+  width: 100%; /* Full width */
+}
+
+/* Align text to the left in the home section */
+.subsection {
+  height: auto; /* Allow height to adjust to content */
+  width: 40%; /* Adjust width for each subsection */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center items */
+  justify-content: center;
+  overflow: hidden;
+  padding: 10px;
+  box-sizing: border-box;
+  text-align: center; /* Center text */
+}
+
+/* Download section styling */
+.download-section {
+  display: flex; /* Use flexbox for centering */
+  justify-content: center; /* Center the button horizontally */
+  margin-top: 20px; /* Adds space above the button */
+  padding: 20px; /* Optional padding */
+  text-align: center; /* Center align text */
 }
 
 /* Custom scrollbar styling */
@@ -41,3 +78,162 @@
 ::-webkit-scrollbar-thumb:hover {
   background-color: #fca311;
 }
+
+.heading {
+  font-size: 2.6em;
+  color: #ffffff; /* I'M in white */
+  text-align: left; /* Left-align heading */
+}
+
+.heading-name {
+  margin-bottom: 40px;
+  font-size: 2.6em;
+  font-weight: normal;
+  color: #ffffff;
+  text-align: left; /* Left-align name */
+}
+
+.main-name {
+  color: #fca311; /* ANKIT RAJ in #fca311 */
+  font-size: 2.4rem;
+}
+
+.wave {
+  font-size: 1.2em;
+}
+
+.Typewriter__wrapper {
+  font-size: 2.6em;
+  color: #fca311; /* Typewriter text color */
+  text-align: left; /* Left-align typewriter text */
+}
+
+.Typewriter__cursor {
+  color: #fca311;
+  font-size: 2.2em;
+  line-height: 1.5;
+}
+
+/* Section 1: Left-align text header */
+.home-header {
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+  align-items: flex-start; /* Align text to the left */
+  text-align: left; /* Left-align text */
+  padding-left: 50px; /* Optional: Adds padding for spacing from the left edge */
+}
+
+/* Left-align the Typewriter text within the .home-header section */
+.typewriter-container .Typewriter__wrapper {
+  text-align: left;
+  width: 100%; /* Ensures it spans full width of container */
+}
+
+/* Section 2: Keep Lottie animation centered */
+.home-image {
+  display: flex;
+  justify-content: center; /* Center-align Lottie animation */
+  align-items: center;
+  text-align: center;
+}
+
+.wave {
+  display: inline-block;
+  animation: wave 1s infinite;
+}
+
+@keyframes wave {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  20% {
+    transform: translateX(-10px);
+  }
+  40% {
+    transform: translateX(10px);
+  }
+  60% {
+    transform: translateX(-10px);
+  }
+  80% {
+    transform: translateX(10px);
+  }
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  #home {
+    flex-direction: column; /* Stack elements vertically */
+    justify-content: center; /* Center content */
+    align-items: center; /* Center items horizontally */
+    height: auto; /* Allow home section to grow with content */
+  }
+
+  .subsection-container {
+    flex-direction: column; /* Stack subsections vertically on mobile */
+    align-items: center; /* Center items */
+  }
+
+  .subsection {
+    width: 100%; /* Use full width on mobile */
+    align-items: center; /* Center align items */
+    height: auto; /* Allow height to adjust to content */
+    padding: 10px; /* Ensure enough space inside the subsection */
+  }
+
+  .heading {
+    font-size: 2em; /* Smaller font size for mobile */
+  }
+
+  .heading-name {
+    font-size: 2em; /* Smaller font size for mobile */
+  }
+
+  .main-name {
+    font-size: 1.8rem; /* Smaller font size for mobile */
+  }
+
+  .Typewriter__wrapper {
+    font-size: 1.5em; /* Smaller typewriter text */
+  }
+
+  .Typewriter__cursor {
+    font-size: 1.5em; /* Smaller cursor */
+  }
+
+  /* Adjust Lottie animation size */
+  .home-image {
+    max-height: 300px; /* Limit height on mobile */
+    width: 100%; /* Full width */
+  }
+
+  /* Adjust wave animation font size */
+  .wave {
+    font-size: 1.5em; /* Increase font size for better visibility */
+  }
+}
+
+#subsection1 {
+  margin-top: -20px;
+}
+
+.download-button {
+  display: inline-block;
+  margin-top: 0px; /* Adds space between the Lottie animation and the button */
+  padding: 12px 24px; /* Padding for button */
+  background-color: #fca311; /* Button background color */
+  color: black; /* Button text color for better contrast */
+  font-size: 1.2em; /* Font size */
+  border: none; /* Remove default border */
+  border-radius: 5px; /* Rounded corners */
+  text-decoration: none; /* Remove underline */
+  text-align: center; /* Center text */
+  cursor: pointer; /* Pointer on hover */
+  transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.download-button:hover {
+  background-color: #e3a100; /* Darker shade on hover */
+}
+
