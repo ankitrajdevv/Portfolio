@@ -1,0 +1,163 @@
+/* General Navbar Styles */
+.navbar {
+    background-color: transparent;
+    /* transition: background-color 0.3s ease; */
+    transition: background-color 0.3s ease, backdrop-filter 0.3s ease;
+    color: white;
+    padding: 0.5rem 1rem;
+    position: fixed;
+    width: 100%;
+    z-index: 10;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Sticky Navbar Styles */
+.sticky {
+    backdrop-filter: blur(25px); /* Apply background blur */
+    background: rgba(252, 163, 17, 0.2); /* Semi-transparent background */
+    /* border-radius: 15px; Rounded corners for a softer look */
+    /* padding: 20px; Add some padding for spacing */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    transition: background 0.3s ease, backdrop-filter 0.3s ease;
+}
+
+/* Logo Styles */
+.logo {
+    width: 50px;
+    margin-left: 70px;
+    font-size: 2.5rem; /* Adjust size of the home icon */
+    transition: color 0.3s ease, filter 0.3s ease; /* Add transition for smooth effect */
+    color: #fca311; /* Original color */
+    filter: drop-shadow(0 0 15px rgba(252, 163, 17, 1))  /* Stronger glow */
+             drop-shadow(0 0 25px rgba(252, 163, 17, 0.8))
+             drop-shadow(0 0 35px rgba(252, 163, 17, 0.5));
+}
+
+/* Optional: Add a stronger glow on hover */
+.logo:hover {
+    color: white; /* Change color on hover */
+    filter: drop-shadow(0 0 15px rgba(252, 163, 17, 1))  /* Stronger glow */
+             drop-shadow(0 0 25px rgba(252, 163, 17, 0.8))
+             drop-shadow(0 0 35px rgba(252, 163, 17, 0.5));
+}
+
+/* Navbar Items */
+.navbar-items {
+    display: flex;
+    align-items: center;
+    margin-right: 70px;
+    position: relative; /* Add relative positioning to the parent */
+}
+
+.navbar-items a {
+    color: white;
+    padding: 0.5rem 1rem;
+    margin: 0 15px;
+    font-size: 1.3rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    display: flex;
+    align-items: center;
+    position: relative; /* Set relative positioning for the links */
+}
+
+/* Hover Effect */
+.navbar-items a:hover {
+    color: #fca311;
+}
+
+/* Underline Effect */
+.navbar-items a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -5px; /* Adjust as needed */
+    height: 3px;
+    width: 100%; /* Set width to 100% for full underlining */
+    background-color: #fca311;
+    transform: scaleX(0); /* Initially scale it to 0 */
+    transition: transform 0.3s ease; /* Animate the scaling */
+}
+
+.navbar-items a:hover::after {
+    transform: scaleX(1); /* Scale it back to full width on hover */
+}
+
+/* Specific Styles to Remove Underline Effect for GitHub Icon */
+.navbar-items a[href="https://github.com/ankitrajdevv"]:hover::after {
+    transform: scaleX(0); /* No underline effect on hover */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .logo {
+        width: 50px;
+        margin-left: 0px;
+        font-size: 2.5rem; /* Adjust size of the home icon */
+    }
+    .navbar-items {
+        display: none;
+        flex-direction: column;
+        background-color: rgba(0, 0, 0, 0.9);
+        position: absolute;
+        top: 100%;
+        right: 0;
+        width: calc(100% - 20px); /* Adjust width to account for right margin */
+        margin-right: 10px; /* Add margin to the right */
+        padding: 1rem 0;
+        text-align: center;
+    }
+
+    .navbar-collapse.expanded .navbar-items {
+        display: flex;
+        animation: slideDown 0.3s ease-in-out;
+    }
+
+    .navbar-toggle {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        width: 30px;
+        height: 24px;
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 0;
+        position: absolute;
+        right: 50px; /* Adjusted position to add space on the right */
+        top: 1rem;
+    }
+
+    .navbar-toggle span {
+        display: block;
+        width: 100%;
+        height: 3px;
+        background-color: white;
+        transition: all 0.3s ease-in-out;
+    }
+}
+
+/* Hide Hamburger Icon in Full Screen */
+@media (min-width: 769px) {
+    .navbar-toggle {
+        display: none;
+    }
+}
+
+/* Slide down animation */
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10%);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
